@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>HR AI Labs | حلول الذكاء الاصطناعي للموارد البشرية</title>
+  <meta
+    name="description"
+    content="اكتشف أدوات HR AI Labs الذكية للتوظيف والموارد البشرية."
+  >
+  <meta name="theme-color" content="#070b16">
+
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #070b16;
+      --surface: rgba(15, 23, 42, 0.82);
+      --card: rgba(15, 23, 42, 0.76);
+      --border: rgba(148, 163, 184, 0.16);
+      --text: #eef2ff;
+      --muted: #9aa8bd;
+      --blue: #38bdf8;
+      --purple: #a78bfa;
+      --green: #34d399;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(56, 189, 248, 0.18), transparent 42%),
+        radial-gradient(ellipse at 100% 35%, rgba(124, 58, 237, 0.12), transparent 35%),
+        var(--bg);
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 26px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      border: 1px solid rgba(56, 189, 248, 0.38);
+      border-radius: 14px;
+      color: var(--blue);
+      background: rgba(56, 189, 248, 0.1);
+      font-size: 22px;
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.12);
+    }
+
+    .brand-name {
+      font-size: 17px;
+      font-weight: 750;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-caption {
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero {
+      padding: 56px 0 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: #cbd5e1;
+      background: rgba(15, 23, 42, 0.72);
+      font-size: 13px;
+    }
+
+    .eyebrow-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(52, 211, 153, 0.8);
+    }
+
+    h1 {
+      margin: 22px 0 14px;
+      font-size: clamp(36px, 7vw, 64px);
+      line-height: 1.12;
+      letter-spacing: -0.04em;
+    }
+
+    h1 span {
+      color: var(--blue);
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(15px, 2vw, 18px);
+      line-height: 1.9;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 16px 0 22px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 23px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      padding-bottom: 56px;
+    }
+
+    .project-card {
+      position: relative;
+      display: flex;
+      min-height: 265px;
+      flex-direction: column;
+      padding: 23px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background:
+        linear-gradient(145deg, rgba(20, 31, 54, 0.86), rgba(8, 13, 27, 0.92));
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+    }
+
+    .project-card::before {
+      position: absolute;
+      top: -70px;
+      left: -60px;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: var(--glow, rgba(56, 189, 248, 0.13));
+      filter: blur(35px);
+      content: "";
+      pointer-events: none;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.42);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-top,
+    .project-card h3,
+    .project-card p,
+    .card-link {
+      position: relative;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .project-icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 15px;
+      background: rgba(15, 23, 42, 0.8);
+      font-size: 23px;
+    }
+
+    .category {
+      padding: 6px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      border-radius: 999px;
+      color: #b7c3d6;
+      background: rgba(15, 23, 42, 0.7);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .project-card h3 {
+      margin: 0 0 9px;
+      font-size: 19px;
+      letter-spacing: -0.01em;
+    }
+
+    .project-card p {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .card-link span {
+      transition: transform 160ms ease;
+    }
+
+    .card-link:hover span {
+      transform: translateX(-4px);
+    }
+
+    .note {
+      margin: 0 0 52px;
+      padding: 16px 18px;
+      border: 1px solid rgba(56, 189, 248, 0.18);
+      border-radius: 14px;
+      color: #b8c5d8;
+      background: rgba(56, 189, 248, 0.055);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    footer {
+      padding: 22px 0 30px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      .projects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 560px) {
+      .container {
+        width: min(100% - 28px, 440px);
+      }
+
+      header {
+        padding: 18px 0;
+      }
+
+      .hero {
+        padding: 42px 0 36px;
+      }
+
+      .section-heading {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .project-card {
+        min-height: 240px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="container">
+    <a class="brand" href="#" aria-label="HR AI Labs - الرئيسية">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>
+        <span class="brand-name">HR AI Labs</span>
+        <span class="brand-caption">حلول ذكية للتوظيف والموارد البشرية</span>
+      </span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <div class="eyebrow">
+        <span class="eyebrow-dot" aria-hidden="true"></span>
+        <span>مجموعة أدوات ذكية للموارد البشرية</span>
+      </div>
+
+      <h1>كل ما تحتاجه للتوظيف،<br><span>في مكان واحد</span></h1>
+
+      <p>
+        اكتشف أدوات HR AI Labs المصممة لمساعدة فرق التوظيف والموارد البشرية
+        على مراجعة السير الذاتية، إجراء المقابلات، إعداد عروض العمل، وإنشاء التقارير.
+      </p>
+    </section>
+
+    <section class="container" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <h2 id="projects-title">مشاريعنا</h2>
+        <p>اختر الأداة المناسبة لاحتياجك</p>
+      </div>
+
+      <div class="projects">
+        <article class="project-card" style="--glow: rgba(56, 189, 248, 0.18);">
+          <div class="card-top">
+            <div class="project-icon" aria-hidden="true">📄</div>
+            <span class="category">تحليل السير الذاتية</span>
+          </div>
+          <h3>CV Reviewer AI</h3>
+          <p>
+            راجع السيرة الذاتية، اكتشف الأخطاء، واحصل على اقتراحات تساعد على تحسين محتواها.
+          </p>
+          <a class="card-link"
+             href="https://cv-reviewer-ai-exact.vercel.app/"
+             target="_blank" rel="noopener noreferrer">
+            استكشف المشروع <span aria-hidden="true">←</span>
+          </a>
+        </article>
+
+        <article class="project-card" style="--glow: rgba(52, 211, 153, 0.16);">
+          <div class="card-top">
+            <div class="project-icon" aria-hidden="true">🤝</div>
+            <span class="category">عروض العمل</span>
+          </div>
+          <h3>OfferX AI</h3>
+          <p>
+            أنشئ عروض عمل منظمة تتضمن تفاصيل الوظيفة والشروط والمزايا.
+          </p>
+          <a class="card-link"
+             href="https://offerx-ai-exact.vercel.app/"
+             target="_blank" rel="noopener noreferrer">
+            استكشف المشروع <span aria-hidden="true">←</span>
+          </a>
+        </article>
+
+        <article class="project-card" style="--glow: rgba(167, 139, 250, 0.17);">
+          <div class="card-top">
+            <div class="project-icon" aria-hidden="true">🎤</div>
+            <span class="category">المقابلات الوظيفية</span>
+          </div>
+          <h3>Hirix AI</h3>
+          <p>
+            أنشئ أسئلة مقابلات وظيفية مرتبطة بخبرات المرشح ومهاراته.
+          </p>
+          <a class="card-link"
+             href="https://hirix-ai-exact.vercel.app/"
+             target="_blank" rel="noopener noreferrer">
+            استكشف المشروع <span aria-hidden="true">←</span>
+          </a>
+        </article>
+
+        <article class="project-card" style="--glow: rgba(251, 191, 36, 0.14);">
+          <div class="card-top">
+            <div class="project-icon" aria-hidden="true">🧭</div>
+            <span class="category">التوصيف الوظيفي</span>
+          </div>
+          <h3>JDX AI</h3>
+          <p>
+            جهّز توصيفًا وظيفيًا واضحًا يشمل المهام والمسؤوليات والمتطلبات.
+          </p>
+          <a class="card-link"
+             href="https://jdx-ai-exact.vercel.app/"
+             target="_blank" rel="noopener noreferrer">
+            استكشف المشروع <span aria-hidden="true">←</span>
+          </a>
+        </article>
+
+        <article class="project-card" style="--glow: rgba(244, 114, 182, 0.15);">
+          <div class="card-top">
+            <div class="project-icon" aria-hidden="true">📊</div>
+            <span class="category">تقارير الموارد البشرية</span>
+          </div>
+          <h3>HR ReportX AI</h3>
+          <p>
+            حلّل بيانات الموظفين وأنشئ تقارير الموارد البشرية وملخصاتها.
+          </p>
+          <a class="card-link"
+             href="https://hr-report-x-ai-exact.vercel.app/"
+             target="_blank" rel="noopener noreferrer">
+            استكشف المشروع <span aria-hidden="true">←</span>
+          </a>
+        </article>
+
+        <article class="project-card" style="--glow: rgba(45, 212, 191, 0.15);">
+          <div class="card-top">
+            <div class="project-icon" aria-hidden="true">🧪</div>
+            <span class="category">تقييم المرشحين</span>
+          </div>
+          <h3>Vetly AI</h3>
+          <p>
+            أنشئ اختبارات وظيفية مبنية على خبرات المرشح، وقيّم إجاباته.
+          </p>
+          <a class="card-link"
+             href="https://vetly-ai-exact.vercel.app/"
+             target="_blank" rel="noopener noreferrer">
+            استكشف المشروع <span aria-hidden="true">←</span>
+          </a>
+        </article>
+      </div>
+
+      <p class="note">
+        عند الضغط على «استكشف المشروع»، ستنتقل إلى الصفحة الخارجية الخاصة بالأداة.
+        ومن هناك يمكن الوصول إلى التطبيق نفسه.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2026 HR AI Labs — أدوات ذكية للتوظيف والموارد البشرية
+    </div>
+  </footer>
+</body>
+</html>
