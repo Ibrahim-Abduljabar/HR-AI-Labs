@@ -4,24 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>HR AI Labs | حلول الذكاء الاصطناعي للموارد البشرية</title>
-  <meta
-    name="description"
-    content="اكتشف أدوات HR AI Labs الذكية للتوظيف والموارد البشرية."
-  >
+  <title>HR AI Labs | حلول ذكية للتوظيف والموارد البشرية</title>
+  <meta name="description" content="أدوات ذكية تساعد الباحثين عن عمل والشركات وفرق الموارد البشرية.">
   <meta name="theme-color" content="#070b16">
 
   <style>
     :root {
       color-scheme: dark;
       --bg: #070b16;
-      --surface: rgba(15, 23, 42, 0.82);
-      --card: rgba(15, 23, 42, 0.76);
       --border: rgba(148, 163, 184, 0.16);
       --text: #eef2ff;
       --muted: #9aa8bd;
       --blue: #38bdf8;
-      --purple: #a78bfa;
       --green: #34d399;
     }
 
@@ -40,16 +34,15 @@
         var(--bg);
     }
 
-    a {
-      color: inherit;
-    }
-
     .container {
       width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
     }
 
     header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 26px 0;
     }
 
@@ -73,16 +66,36 @@
       box-shadow: 0 0 28px rgba(56, 189, 248, 0.12);
     }
 
+    .brand-name,
+    .brand-caption {
+      display: block;
+    }
+
     .brand-name {
       font-size: 17px;
       font-weight: 750;
-      letter-spacing: 0.02em;
     }
 
     .brand-caption {
       margin-top: 2px;
       color: var(--muted);
       font-size: 12px;
+    }
+
+    .language-link {
+      padding: 9px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      border-radius: 999px;
+      color: #cbd5e1;
+      background: rgba(15, 23, 42, 0.72);
+      font-size: 13px;
+      text-decoration: none;
+      transition: border-color 160ms ease, color 160ms ease;
+    }
+
+    .language-link:hover {
+      border-color: rgba(56, 189, 248, 0.5);
+      color: var(--blue);
     }
 
     .hero {
@@ -113,7 +126,7 @@
     h1 {
       margin: 22px 0 14px;
       font-size: clamp(36px, 7vw, 64px);
-      line-height: 1.12;
+      line-height: 1.2;
       letter-spacing: -0.04em;
     }
 
@@ -122,7 +135,7 @@
     }
 
     .hero p {
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
       color: var(--muted);
       font-size: clamp(15px, 2vw, 18px);
@@ -152,7 +165,7 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
-      padding-bottom: 56px;
+      padding-bottom: 32px;
     }
 
     .project-card {
@@ -164,10 +177,9 @@
       overflow: hidden;
       border: 1px solid var(--border);
       border-radius: 20px;
-      background:
-        linear-gradient(145deg, rgba(20, 31, 54, 0.86), rgba(8, 13, 27, 0.92));
+      background: linear-gradient(145deg, rgba(20, 31, 54, 0.86), rgba(8, 13, 27, 0.92));
       box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
-      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+      transition: transform 160ms ease, border-color 160ms ease;
     }
 
     .project-card::before {
@@ -177,7 +189,7 @@
       width: 150px;
       height: 150px;
       border-radius: 50%;
-      background: var(--glow, rgba(56, 189, 248, 0.13));
+      background: var(--glow, rgba(56, 189, 248, 0.14));
       filter: blur(35px);
       content: "";
       pointer-events: none;
@@ -186,7 +198,6 @@
     .project-card:hover {
       transform: translateY(-4px);
       border-color: rgba(56, 189, 248, 0.42);
-      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.3);
     }
 
     .card-top,
@@ -228,7 +239,6 @@
     .project-card h3 {
       margin: 0 0 9px;
       font-size: 19px;
-      letter-spacing: -0.01em;
     }
 
     .project-card p {
@@ -296,7 +306,7 @@
       }
 
       .section-heading {
-        align-items: start;
+        align-items: flex-start;
         flex-direction: column;
       }
 
@@ -314,7 +324,6 @@
       *,
       *::before,
       *::after {
-        scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
       }
     }
@@ -323,26 +332,29 @@
 
 <body>
   <header class="container">
-    <a class="brand" href="#" aria-label="HR AI Labs - الرئيسية">
+    <a class="brand" href="https://hr-ai-labs.vercel.app/" aria-label="HR AI Labs - الرئيسية">
       <span class="brand-mark" aria-hidden="true">✦</span>
       <span>
         <span class="brand-name">HR AI Labs</span>
         <span class="brand-caption">حلول ذكية للتوظيف والموارد البشرية</span>
       </span>
     </a>
+
+    <a class="language-link" href="https://hr-ai-labs-2.vercel.app/" lang="en">English</a>
   </header>
 
   <main>
     <section class="hero container">
       <div class="eyebrow">
         <span class="eyebrow-dot" aria-hidden="true"></span>
-        <span>مجموعة أدوات ذكية للموارد البشرية</span>
+        <span>أدوات ذكية لمستقبل العمل</span>
       </div>
 
-      <h1>كل ما تحتاجه للتوظيف،<br><span>في مكان واحد</span></h1>
+      <h1>HR AI Labs</h1>
 
       <p>
-اكتشف أدوات HR AI Labs الذكية، المصممة لتمكين الباحثين عن عمل من بناء مستقبلهم، ومساعدة الشركات وفرق الموارد البشرية على أتمتة التوظيف والتقارير
+        اكتشف أدوات HR AI Labs الذكية، المصممة لتمكين الباحثين عن عمل من بناء مستقبلهم،
+        ومساعدة الشركات وفرق الموارد البشرية على أتمتة التوظيف والتقارير.
       </p>
     </section>
 
@@ -359,12 +371,8 @@
             <span class="category">تحليل السير الذاتية</span>
           </div>
           <h3>CV Reviewer AI</h3>
-          <p>
-            راجع السيرة الذاتية، اكتشف الأخطاء، واحصل على اقتراحات تساعد على تحسين محتواها.
-          </p>
-          <a class="card-link"
-             href="https://cv-reviewer-ai-exact.vercel.app/"
-             target="_blank" rel="noopener noreferrer">
+          <p>راجع سيرتك الذاتية، اكتشف الأخطاء، واحصل على اقتراحات تساعدك على تحسينها.</p>
+          <a class="card-link" href="https://cv-reviewer-ai-exact.vercel.app/" target="_blank" rel="noopener noreferrer">
             استكشف المشروع <span aria-hidden="true">←</span>
           </a>
         </article>
@@ -375,12 +383,8 @@
             <span class="category">عروض العمل</span>
           </div>
           <h3>OfferX AI</h3>
-          <p>
-            أنشئ عروض عمل منظمة تتضمن تفاصيل الوظيفة والشروط والمزايا.
-          </p>
-          <a class="card-link"
-             href="https://offerx-ai-exact.vercel.app/"
-             target="_blank" rel="noopener noreferrer">
+          <p>أنشئ عروض عمل منظمة تشمل تفاصيل الوظيفة والشروط والمزايا.</p>
+          <a class="card-link" href="https://offerx-ai-exact.vercel.app/" target="_blank" rel="noopener noreferrer">
             استكشف المشروع <span aria-hidden="true">←</span>
           </a>
         </article>
@@ -391,12 +395,8 @@
             <span class="category">المقابلات الوظيفية</span>
           </div>
           <h3>Hirix AI</h3>
-          <p>
-            أنشئ أسئلة مقابلات وظيفية مرتبطة بخبرات المرشح ومهاراته.
-          </p>
-          <a class="card-link"
-             href="https://hirix-ai-exact.vercel.app/"
-             target="_blank" rel="noopener noreferrer">
+          <p>أنشئ أسئلة مقابلات تناسب خبرات المرشح ومهاراته.</p>
+          <a class="card-link" href="https://hirix-ai-exact.vercel.app/" target="_blank" rel="noopener noreferrer">
             استكشف المشروع <span aria-hidden="true">←</span>
           </a>
         </article>
@@ -407,12 +407,8 @@
             <span class="category">التوصيف الوظيفي</span>
           </div>
           <h3>JDX AI</h3>
-          <p>
-            جهّز توصيفًا وظيفيًا واضحًا يشمل المهام والمسؤوليات والمتطلبات.
-          </p>
-          <a class="card-link"
-             href="https://jdx-ai-exact.vercel.app/"
-             target="_blank" rel="noopener noreferrer">
+          <p>أنشئ توصيفًا وظيفيًا واضحًا يشمل المهام والمسؤوليات والمتطلبات.</p>
+          <a class="card-link" href="https://jdx-ai-exact.vercel.app/" target="_blank" rel="noopener noreferrer">
             استكشف المشروع <span aria-hidden="true">←</span>
           </a>
         </article>
@@ -423,12 +419,8 @@
             <span class="category">تقارير الموارد البشرية</span>
           </div>
           <h3>HR ReportX AI</h3>
-          <p>
-            حلّل بيانات الموظفين وأنشئ تقارير الموارد البشرية وملخصاتها.
-          </p>
-          <a class="card-link"
-             href="https://hr-report-x-ai-exact.vercel.app/"
-             target="_blank" rel="noopener noreferrer">
+          <p>حلّل بيانات الموظفين وأنشئ تقارير الموارد البشرية وملخصاتها.</p>
+          <a class="card-link" href="https://hr-report-x-ai-exact.vercel.app/" target="_blank" rel="noopener noreferrer">
             استكشف المشروع <span aria-hidden="true">←</span>
           </a>
         </article>
@@ -439,28 +431,21 @@
             <span class="category">تقييم المرشحين</span>
           </div>
           <h3>Vetly AI</h3>
-          <p>
-            أنشئ اختبارات وظيفية مبنية على خبرات المرشح، وقيّم إجاباته.
-          </p>
-          <a class="card-link"
-             href="https://vetly-ai-exact.vercel.app/"
-             target="_blank" rel="noopener noreferrer">
+          <p>أنشئ اختبارات وظيفية مبنية على خبرات المرشح وقيّم إجاباته.</p>
+          <a class="card-link" href="https://vetly-ai-exact.vercel.app/" target="_blank" rel="noopener noreferrer">
             استكشف المشروع <span aria-hidden="true">←</span>
           </a>
         </article>
       </div>
 
       <p class="note">
-        عند الضغط على «استكشف المشروع»، ستنتقل إلى الصفحة الخارجية الخاصة بالأداة.
-        ومن هناك يمكن الوصول إلى التطبيق نفسه.
+        عند اختيار «استكشف المشروع» ستنتقل إلى صفحة المشروع الخارجية.
       </p>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      © 2026 HR AI Labs — أدوات ذكية للتوظيف والموارد البشرية
-    </div>
+    <div class="container">© 2026 HR AI Labs — أدوات ذكية للتوظيف والموارد البشرية</div>
   </footer>
 </body>
 </html>
